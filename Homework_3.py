@@ -4,6 +4,8 @@ for i in range(1, a+1):
   sum += i**3
 print(sum)
 
+
+print("Таблица умножения")
 b = []
 for i in range(1,10):
   for j in range(1,10):
