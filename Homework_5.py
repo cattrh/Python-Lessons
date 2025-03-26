@@ -21,4 +21,3 @@ def polind(n):
     if count == len(a)//2:
       print(i, a)
 gran=int(input("Введите границы: "))
-prov(gran)
