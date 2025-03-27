@@ -1,0 +1,40 @@
+class ComplexNumber:
+    def init(self, real, imag):
+        if not isinstance(real, (int, float)) or not isinstance(imag, (int, float)):
+            raise TypeError("Обе части комплексного числа должны быть числами")
+        self._real = real
+        self._imag = imag
+
+    @property
+    def real(self):
+        return self._real
+
+    @property
+    def imag(self):
+        return self._imag
+
+    def add(self, other):
+        if not isinstance(other, ComplexNumber):
+            raise TypeError("Можно складывать только комплексные числа")
+        return ComplexNumber(self.real + other.real, self.imag + other.imag)
+
+    def repr(self):
+        return f"ComplexNumber({self.real}, {self.imag})"
+
+
+# Примеры проверки
+if name == "main":
+    c1 = ComplexNumber(1, 2)
+    c2 = ComplexNumber(3, 4)
+    c3 = c1 + c2  # ComplexNumber(4,6)
+    print(c3)  # ComplexNumber(4, 6)
+    
+    try:
+        c4 = c1 + 5  # TypeError
+    except TypeError as e:
+        print(e)  # Можно складывать только комплексные числа
+    
+    try:
+        c5 = ComplexNumber("a", 2)  # TypeError
+    except TypeError as e:
+        print(e)  # Обе части комплексного числа должны быть числами
