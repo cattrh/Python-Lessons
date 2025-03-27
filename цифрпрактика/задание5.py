@@ -67,10 +67,7 @@ class Fraction:
         other= other.value() if isinstance(other, Fraction) else other
         return Fraction(self.value()/other)
     def __rtruediv__(self, other):
-        return self.__truediv__(other)
-
-
-        
+        return self.__truediv__(other)     
 
 f1 = Fraction(1, 2)
 f2 = Fraction(3, 4)
